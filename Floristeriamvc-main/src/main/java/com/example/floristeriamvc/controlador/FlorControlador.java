@@ -63,5 +63,6 @@ public class FlorControlador {
         florServicio.eliminarFlor(id);
         return "redirect:/flores";
     }
+    hola;
 }
 
