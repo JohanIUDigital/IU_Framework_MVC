@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Nueva Flor</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Agregar Nueva Flor</h1>
+    </header>
+    <div class="container mt-5">
+        <form th:action="@{/flores}" th:object="${flor}" method="post">
+            <div class="form-group">
+                <label for="tipo">Tipo:</label>
+                <input type="text" id="tipo" class="form-control" th:field="*{tipo}" required>
+            </div>
+            <div class="form-group">
+                <label for="color">Color:</label>
+                <input type="text" id="color" class="form-control" th:field="*{color}" required>
+            </div>
+            <div class="form-group">
+                <label for="variedad">Variedad:</label>
+                <input type="text" id="variedad" class="form-control" th:field="*{variedad}" required>
+            </div>
+            <div class="form-group">
+                <label for="cantidadDisponible">Cantidad Disponible:</label>
+                <input type="number" id="cantidadDisponible" class="form-control" th:field="*{cantidadDisponible}" required>
+            </div>
+            <div class="form-group">
+                <label for="precioCompra">Precio Compra:</label>
+                <input type="number" step="0.01" id="precioCompra" class="form-control" th:field="*{precioCompra}" required>
+            </div>
+            <div class="form-group">
+                <label for="precioVenta">Precio Venta:</label>
+                <input type="number" step="0.01" id="precioVenta" class="form-control" th:field="*{precioVenta}" required>
+            </div>
+            <button type="submit" class="btn btn-success">Guardar</button>
+            <a th:href="@{/flores}" class="btn btn-danger">Cancelar</a>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

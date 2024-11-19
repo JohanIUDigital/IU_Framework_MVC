@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Flores</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <header>
+        <h1>Lista de Flores</h1>
+    </header>
+    <div class="container">
+        <a href="#" th:href="@{/flores/nuevo}" class="btn btn-success mb-3">Agregar Nueva Flor</a> 
+        <a href="#" th:href="@{/pedidos}" class="btn btn-info mb-3">Consultar Pedidos</a> 
+               
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tipo</th>
+                    <th>Color</th>
+                    <th>Variedad</th>
+                    <th>Cantidad Disponible</th>
+                    <th>Precio Compra</th>
+                    <th>Precio Venta</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="flor : ${flores}">
+                    <td th:text="${flor.id}"></td>
+                    <td th:text="${flor.tipo}"></td>
+                    <td th:text="${flor.color}"></td>
+                    <td th:text="${flor.variedad}"></td>
+                    <td th:text="${flor.cantidadDisponible}"></td>
+                    <td th:text="${flor.precioCompra}"></td>
+                    <td th:text="${flor.precioVenta}"></td>
+                    <td>
+                        <div class="btn-group" role="group">
+                            <a th:href="@{/flores/editar/{id}(id=${flor.id})}" class="btn btn-warning">Modificar</a>
+                            <a th:href="@{/flores/eliminar/{id}(id=${flor.id})}" class="btn btn-danger">Eliminar</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle del Pedido</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalle del Pedido</h1>
+        <div>
+            <p><strong>ID:</strong> <span th:text="${pedido.id}"></span></p>
+            <p><strong>Nombre del Cliente:</strong> <span th:text="${pedido.clienteNombre}"></span></p>
+            <p><strong>Dirección:</strong> <span th:text="${pedido.clienteDireccion}"></span></p>
+            <p><strong>Contacto:</strong> <span th:text="${pedido.clienteContacto}"></span></p>
+            <p><strong>Tipo de Arreglo:</strong> <span th:text="${pedido.tipoArreglo}"></span></p>
+            <p><strong>Ocasión:</strong> <span th:text="${pedido.ocasion}"></span></p>
+            <p><strong>Fecha de Entrega:</strong> <span th:text="${pedido.fechaEntrega}"></span></p>
+            <p><strong>Presupuesto:</strong> <span th:text="${pedido.presupuesto}"></span></p>
+            <p><strong>Estado:</strong> <span th:text="${pedido.estado}"></span></p>
+        </div>
+        <a href="#" th:href="@{/pedidos}" class="btn btn-secondary">Volver a la lista</a>
+    </div>
+</body>
+</html>

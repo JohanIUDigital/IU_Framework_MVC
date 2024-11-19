@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo Pedido</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Crear Nuevo Pedido</h1>
+        <form action="#" th:action="@{/pedidos}" th:object="${pedido}" method="post">
+            <div class="form-group">
+                <label for="clienteNombre">Nombre del Cliente:</label>
+                <input type="text" id="clienteNombre" th:field="*{clienteNombre}" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label for="clienteDireccion">Dirección:</label>
+                <input type="text" id="clienteDireccion" th:field="*{clienteDireccion}" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label for="clienteContacto">Contacto:</label>
+                <input type="text" id="clienteContacto" th:field="*{clienteContacto}" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label for="tipoArreglo">Tipo de Arreglo:</label>
+                <input type="text" id="tipoArreglo" th:field="*{tipoArreglo}" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label for="ocasion">Ocasión:</label>
+                <input type="text" id="ocasion" th:field="*{ocasion}" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label for="fechaEntrega">Fecha de Entrega:</label>
+                <input type="date" id="fechaEntrega" th:field="*{fechaEntrega}" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label for="presupuesto">Presupuesto:</label>
+                <input type="number" id="presupuesto" th:field="*{presupuesto}" class="form-control" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Crear Pedido</button>
+            <a href="#" th:href="@{/pedidos}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Flor</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <header>
+        <h1>Editar Flor</h1>
+    </header>
+    <div class="container">
+        <form action="#" th:action="@{/flores/editar/{id}(id=${flor.id})}" th:object="${flor}" method="post">
+            <div class="form-group">
+                <label for="tipo">Tipo:</label>
+                <input type="text" id="tipo" th:field="*{tipo}" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="color">Color:</label>
+                <input type="text" id="color" th:field="*{color}" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="variedad">Variedad:</label>
+                <input type="text" id="variedad" th:field="*{variedad}" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="cantidadDisponible">Cantidad Disponible:</label>
+                <input type="number" id="cantidadDisponible" th:field="*{cantidadDisponible}" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="precioCompra">Precio Compra:</label>
+                <input type="number" step="0.01" id="precioCompra" th:field="*{precioCompra}" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="precioVenta">Precio Venta:</label>
+                <input type="number" step="0.01" id="precioVenta" th:field="*{precioVenta}" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            <a href="#" th:href="@{/flores}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</body>
+</html>

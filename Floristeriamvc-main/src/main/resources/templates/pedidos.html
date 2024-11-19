@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Pedidos</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Pedidos</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre del Cliente</th>
+                    <th>Dirección</th>
+                    <th>Contacto</th>
+                    <th>Tipo de Arreglo</th>
+                    <th>Ocasión</th>
+                    <th>Fecha de Entrega</th>
+                    <th>Presupuesto</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="pedido : ${pedidos}">
+                    <td th:text="${pedido.id}"></td>
+                    <td th:text="${pedido.clienteNombre}"></td>
+                    <td th:text="${pedido.clienteDireccion}"></td>
+                    <td th:text="${pedido.clienteContacto}"></td>
+                    <td th:text="${pedido.tipoArreglo}"></td>
+                    <td th:text="${pedido.ocasion}"></td>
+                    <td th:text="${pedido.fechaEntrega}"></td>
+                    <td th:text="${pedido.presupuesto}"></td>
+                    <td th:text="${pedido.estado}"></td>
+                    <td>
+                        <a th:href="@{/pedidos/{id}(id=${pedido.id})}" class="btn btn-info btn-sm">Ver</a>
+                        <a th:href="@{/pedidos/editar/{id}(id=${pedido.id})}" class="btn btn-warning btn-sm">Editar</a>
+                        <a th:href="@{/pedidos/eliminar/{id}(id=${pedido.id})}" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="#" th:href="@{/pedidos/nuevo}" class="btn btn-primary">Crear Nuevo Pedido</a>
+    </div>
+</body>
+</html>
