@@ -9,6 +9,6 @@ public class FloristeriamvcApplication {
     public static void main(String[] args) {
 
         System.out.println("Aplicacion lista para correr");
-        //SpringApplication.run(FloristeriamvcApplication.class, args);
+        SpringApplication.run(FloristeriamvcApplication.class, args);
     }
 }
