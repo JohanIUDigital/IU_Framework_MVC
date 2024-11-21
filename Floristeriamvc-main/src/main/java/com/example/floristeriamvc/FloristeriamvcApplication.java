@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class FloristeriamvcApplication {
 
     public static void main(String[] args) {
-        System.out.println("Aplicacion ready para correr");
+        System.out.println("Aplicacion ready para correr 20:53");
         SpringApplication.run(FloristeriamvcApplication.class, args);
     }
 }
