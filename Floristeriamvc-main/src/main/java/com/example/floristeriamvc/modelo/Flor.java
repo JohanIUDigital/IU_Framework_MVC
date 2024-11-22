@@ -1,12 +1,9 @@
 package com.example.floristeriamvc.modelo;
 
-import java.util.HashSet;
-import java.util.Set;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -25,6 +22,4 @@ public class Flor {
     private double precioCompra;
     private double precioVenta;
 
-    @ManyToMany(mappedBy = "flores")
-    private Set<Pedido> pedidos = new HashSet<>(); // Relación inversa con Pedido
 }

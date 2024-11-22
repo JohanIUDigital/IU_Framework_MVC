@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenidos</title>
+    <link rel="stylesheet" href="../static/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+      <div th:replace="~{navBar.html}"></div>
+    </header>
+  <div style="position: relative; height: 100vh; background: url('https://www.nacionpaisa.com/wp-content/uploads/2024/06/IU-Digital-1.webp') no-repeat center center; background-size: cover;">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 8px; text-align: center; max-width: 600px;">
+        <h1>¿Quienes somos?</h1>
+        <p>
+            Somos dos estudiantes de la Universidad de Antioquia con un gran entusiasmo por aprender y desarrollar nuestras habilidades en programación. 
+            Esta página fue creada como parte del programa del framework MVC, donde aplicamos lo aprendido para construir una aplicación funcional y práctica. 
+            Esperamos que disfruten explorándola tanto como nosotros disfrutamos haciéndola.
+            <br><br>
+            Realizado por Sebastián López Figueroa & Johan Alexis Holguín
+            <br><br>Universidad de Antioquia - 2024
+        </p>
+        
+     </div>
+  </div>  
+</body>
+</html>
