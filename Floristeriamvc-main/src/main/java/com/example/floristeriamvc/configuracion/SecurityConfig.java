@@ -20,7 +20,7 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
     http
             .csrf(csrf -> csrf.disable()) // Deshabilitar CSRF para simplificar (no recomendado en producción)
             .authorizeHttpRequests((requests) -> requests
-                    .requestMatchers("/flores/**", "/acerca", "/index").authenticated() // Rutas que requieren autenticación
+                    .requestMatchers("/flores/**", "/index").authenticated() // Rutas que requieren autenticación
                     .anyRequest().permitAll() // Otras rutas accesibles sin autenticación
             )
             .formLogin((form) -> form
